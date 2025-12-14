@@ -1,1 +1,2 @@
-just a site i made as a little surprise for my friends
+just a silly site i made as a little surprise for my friends
+
