@@ -55,15 +55,26 @@ function updateTime() {
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+
+    function idk(num) {
+        if (num < 10) {
+            return "0" + num
+        } else {
+            return num
+        }
+    }
+
     // Display the result in the element with id="demo"
-    timer.innerHTML = days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ";
+    timer.innerHTML = idk(days) + ":" 
+                    + idk(hours) + ":"
+                    + idk(minutes) + ":" 
+                    + idk(seconds);
 
 
     // If the count down is finished, write some text
     if (distance <= 0) {
         //clearInterval(x);
-        timer.innerHTML = "0d 0h 0m 0s";
+        timer.innerHTML = "00:00:00:00";
 
         function timerFlashRed() {
             if (red === false) {
@@ -80,9 +91,12 @@ function updateTime() {
             timerFlashRed()
         }, 500)
 
-        timeSinceEnd.innerHTML = "Time since timer ended: " + Math.abs((days += 1)) + "d " + Math.abs((hours += 1)) + "h "
-            + Math.abs((minutes += 1)) + "m " + Math.abs((seconds += 1)) + "s ";
-
+        timeSinceEnd.innerHTML = "Time since countdown ended: " 
+            + idk( Math.abs( (days += 1) ) ) + ":" 
+            + idk( Math.abs( (hours += 1) ) ) + ":"
+            + idk( Math.abs( (minutes += 1) ) ) + ":"
+            + idk( Math.abs( (seconds += 1) ) );
+            
 
         if (timeRunnethDry === false) {
             timeRunnethDry = true;
