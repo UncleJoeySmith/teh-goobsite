@@ -2,7 +2,7 @@
 
 
 // Set the date we're counting down to
-var countDownDate = new Date("Dec 14, 2025 13:19:30").getTime();
+var countDownDate = new Date("Dec 14, 2025 23:19:30").getTime();
 var timeRunnethDry = false
 
 const clockTickingAudio = document.getElementById("clockTicking");
