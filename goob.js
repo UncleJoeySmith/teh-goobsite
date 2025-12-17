@@ -162,12 +162,7 @@ playBackgroundAudio()
 clockTickingAudio.load();
 unboxVideo.load();
 flagSpinGif.decode();
-preloadImage("ezgif.com-effects.gif");
-
-if ( detectMobile() ) {
-    document.body.style.backgroundColor = "red"
-}
-console.log(detectMobile())
+preloadImage("ezgif.com-effects.gif")
 
 
 if (navigator.getAutoplayPolicy(clockTickingAudio) === "allowed") {
@@ -291,21 +286,4 @@ function dragElement(elmnt) {
         document.onmouseup = null;
         document.onmousemove = null;
     }
-}
-
-
-function detectMobile() {
-    const toMatch = [
-        /Android/i,
-        /webOS/i,
-        /iPhone/i,
-        /iPad/i,
-        /iPod/i,
-        /BlackBerry/i,
-        /Windows Phone/i
-    ];
-    
-    return toMatch.some((toMatchItem) => {
-        return navigator.userAgent.match(toMatchItem);
-    });
 }
